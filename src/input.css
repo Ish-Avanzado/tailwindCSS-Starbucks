@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    h1,
+    h2 {
+        @apply font-bold
+    }
+
+    p {
+        @apply text-sm
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[90rem] p-6 w-full mx-auto;
+    }
+
+    .header {
+        @apply bg-light relative shadow-md;
+    }
+
+    .header__wrapper {
+        @apply flex items-center justify-between;
+    }
+
+    .branding {
+        @apply md:flex items-center gap-12
+    }
+
+    .branding img {
+        @apply w-20;
+    }
+
+    .branding .header__navd {
+        @apply hidden md:flex md:gap-10;
+    }
+
+    .header__action {
+        @apply bg-light absolute overflow-hidden transition-all shadow-md right-0 h-[90vh] pt-0 top-[8rem] w-0 md:static md:h-fit md:shadow-none md:w-[500px];
+    }
+
+    .header__action.open {
+        @apply w-[80%] px-5 pt-10 transition-all;
+    }
+
+    .burger__menu {
+        @apply md:hidden;
+    }
+
+    .burger__menu span {
+        @apply w-[1.5rem] h-[.2rem] bg-gray-700 block rounded-full transition-all;
+    }
+
+    .burger__menu span:nth-child(2) {
+        @apply my-0.5;
+    }
+
+    .burger__menu.open span:first-child {
+        @apply transform translate-y-[9px] rotate-[225deg] transition-all;
+    }
+
+    .burger__menu.open span:nth-child(2) {
+        @apply opacity-0 transition-all;
+    }
+
+    .burger__menu.open span:last-child {
+        @apply transform translate-y-[-2px] rotate-[-225deg] transition-all;
+    }
+
+    .header__navm {
+        @apply uppercase font-semibold flex flex-col gap-3 mb-2 md:hidden;
+    }
+
+    .header__navm li {
+        @apply hover:text-berde text-[20px];
+    }
+
+    .header__signIn {
+        @apply flex gap-2 py-2;
+    }
+
+    .header__btn a {
+        @apply flex items-center gap-2 hover:text-berde;
+    }
+
+    .header__action .header__btn {
+        @apply md:flex md:flex-row-reverse md:p-2;
+    }
+
+    .header__btn {
+        @apply md:flex md:flex-row md:gap-3;
+    }
+
+    /* coffee */
+    .coffee__wrapper {
+        @apply flex flex-col gap-7 md:max-w-[90rem] md:items-center md:mx-auto;
+    }
+
+    .coffee__cards {
+        @apply text-center md:flex md:flex-row;
+    }
+
+    .coffee__details {
+        @apply p-6 flex flex-col gap-4 md:w-[50%] md:place-content-center;
+    }
+
+    .coffee__img {
+        @apply md:w-[50%] md:h-fit;
+    }
+
+    .coffee__cards:nth-child(even) {
+        @apply flex-row-reverse;
+    }
+
+    /* links */
+    .links {
+        @apply py-6 border-t-2;
+    }
+
+    .links__item ul {
+        @apply max-h-[0rem] md:max-h-[50rem] overflow-hidden transition-all md:pt-6;
+    }
+
+    .links__item ul.open {
+        @apply max-h-[50rem] transition-all pt-6;
+    }
+
+    .links__item h4 {
+        @apply flex items-center justify-between font-semibold hover:cursor-pointer md:hover:cursor-default;
+    }
+
+    .links__item ul li a {
+        @apply text-gray-500 hover:text-dark;
+    }
+
+    .links__item ul {
+        @apply flex flex-col gap-4;
+    }
+
+    .links__item h4 i.open {
+        @apply transform rotate-180 transition-all;
+    }
+
+    .links__wrapper {
+        @apply flex flex-col gap-6 md:grid md:grid-cols-6;
+    }
+
+    .links__item h4 i {
+        @apply md:hidden;
+    }
+
+    /* footer */
+    .footer__wrapper {
+        @apply border-t-2
+    }
+
+    .footer__socials i {
+        @apply flex place-content-center w-10 px-3.5 py-3 text-white bg-dark rounded-full;
+    }
+
+    .footer__socials {
+        @apply flex flex-wrap gap-3 my-6 md:my-10;
+    }
+
+    .footer__privacy ul li {
+        @apply text-dark hover:underline text-base font-semibold;
+    }
+
+    .footer__privacy ul {
+        @apply flex flex-col md:flex-row gap-4 md:gap-7;
+    }
+
+    .footer__privacy p {
+        @apply text-xs text-gray-500 pt-12;
+    }
+
+    .footer__privacy li {
+        @apply md:border-r-2 pr-8;
+    }
+
+    .footer__privacy li:last-child {
+        @apply md:border-r-0;
+    }
+
+    /* REWARDS PAGE */
+
+    /* Banner */
+    .rBanner {
+        @apply bg-bituinBanner min-h-[600px] bg-cover bg-lightberde flex text-center md:bg-starBanner md:items-center;
+    }
+
+    .rBanner__wrapper h1 {
+        @apply font-semibold text-[29px] md:text-[36px] mb-4;
+    }
+
+    .rBanner__wrapper p {
+        @apply font-semibold text-[16px] md:text-[20px];
+    }
+
+    /* info */
+    .info__wrapper {
+        @apply py-6;
+    }
+
+    .info__cards {
+        @apply grid grid-cols-[_.5fr,_2fr] p-4 md:flex md:flex-col md:items-center;
+    }
+
+    .info__number {
+        @apply rounded-full border-[1px] border-berde w-[3rem] h-[3rem] md:mx-auto md:m-10;
+    }
+
+    .info__number h4 {
+        @apply font-bold text-3xl text-center text-berde pt-1;
+    }
+
+    .info__details {
+        @apply flex flex-col gap-4 md:text-center;
+    }
+
+    .info__details h3 {
+        @apply text-lg font-semibold;
+    }
+
+    .info__details p {
+        @apply text-base;
+    }
+
+    .info__cardContent {
+        @apply md:grid md:grid-cols-3;
+    }
+
+}
+
+@layer utilities {
+    .btn {
+        @apply inline-block py-2.5 px-2 rounded-md bg-blue-600 text-white font-bold uppercase w-[120px] text-sm hover:shadow-lg hover:shadow-blue-500/40;
+    }
+
+    .btn-star {
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full border-transparent border-[1px] text-sm font-medium;
+    }
+
+    .btn-star.bg--dark {
+        @apply bg-dark text-light hover:text-berde hover:scale-105;
+    }
+
+    .btn-star.bg--light {
+        @apply bg-transparent text-dark border-dark border-[1px] hover:text-berde hover:scale-105;
+    }
+
+    .btn-light-berde {
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full border-transparent border-[1px] text-sm font-medium hover:bg-gray-300 border-berde w-fit place-self-center hover:scale-105 duration-200 transition-all ease-in-out text-berde text-[14px] md:text-[16px];
+    }
+
+    .btn-dark-berde {
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full text-sm font-medium hover:bg-gray-700 w-fit place-self-center hover:scale-105 duration-200 transition-all ease-in-out bg-berde text-white text-[14px] md:text-[16px];
+    }
+}
